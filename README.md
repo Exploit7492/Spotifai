@@ -1,4 +1,9 @@
-# Myspoti
+# Spotifai
+
+> **Spotifai is a rebranded fork of [Myspoti](https://github.com/kota-zo/myspoti)**, licensed
+> under GPL-3.0. The upstream project and its authors are credited in
+> [`LICENSE`](LICENSE), [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`AGENTS.md`](AGENTS.md), and
+> this fork is published under the same license with its full source.
 
 [![Latest release](https://img.shields.io/github/v/release/kota-zo/myspoti?label=release)](https://github.com/kota-zo/myspoti/releases/latest)
 [![License: GPL-3.0](https://img.shields.io/github/license/kota-zo/myspoti)](LICENSE)
@@ -7,7 +12,7 @@
 **Spotify without ads, on a free account.** Your own Spotify account, playlists and Wrapped, in a native Android app that blocks the ads, with offline downloads through extensions you install.
 
 <p align="center">
-  <img src="docs/screenshots/banner.jpg" alt="Myspoti in its two looks: the Immersive home and player, the Classic player and an artist page" width="100%">
+  <img src="docs/screenshots/banner.jpg" alt="Spotifai in its two looks: the Immersive home and player, the Classic player and an artist page" width="100%">
 </p>
 
 <p align="center">
@@ -15,26 +20,26 @@
 </p>
 
 <p align="center">
-  <a href="https://ko-fi.com/myspoti"><img src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" alt="Support Myspoti on Ko-fi" height="56"></a>
+  <a href="https://ko-fi.com/myspoti"><img src="https://storage.ko-fi.com/cdn/kofi6.png?v=6" alt="Support Spotifai on Ko-fi" height="56"></a>
   <a href="https://github.com/sponsors/kota-zo"><img src="https://img.shields.io/badge/Sponsor_on_GitHub-%E2%9D%A4-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor kota-zo on GitHub" height="56"></a>
 </p>
 
-## Why Myspoti
+## Why Spotifai
 
 ### 🚫 Spotify with no ads, on a free account
-No audio ads, no video ads, no banners, and no 30-second break between songs. Myspoti switches off the ad breaks of Spotify's own player, so a free account plays like Premium: pick any song, skip as much as you want. No Premium, no modified Spotify app, nothing to root.
+No audio ads, no video ads, no banners, and no 30-second break between songs. Spotifai switches off the ad breaks of Spotify's own player, so a free account plays like Premium: pick any song, skip as much as you want. No Premium, no modified Spotify app, nothing to root.
 
 ### ⬇️ Offline downloads, through extensions
-Myspoti has no download source of its own. Install a **download-source extension** (Settings, Extensions) and you can download a song, an album, a playlist or all your Liked Songs, and listen with no connection: on the plane, in the metro, with no data. The extension decides where the files come from and in which formats (FLAC, M4A or MP3); Myspoti keeps them encrypted on your phone, refuses a file that is not the song's length, and keeps downloaded playlists in step: songs you add on Spotify download by themselves.
+Spotifai has no download source of its own. Install a **download-source extension** (Settings, Extensions) and you can download a song, an album, a playlist or all your Liked Songs, and listen with no connection: on the plane, in the metro, with no data. The extension decides where the files come from and in which formats (FLAC, M4A or MP3); Spotifai keeps them encrypted on your phone, refuses a file that is not the song's length, and keeps downloaded playlists in step: songs you add on Spotify download by themselves.
 
 ### ✨ And everything you expect from Spotify, and more
 Your home, search, library, playlists, podcasts, Spotify Connect and Android Auto, plus **word-by-word lyrics**, **official music videos** and **song meanings from Genius**.
 
 ## What is it?
 
-Myspoti is a Spotify app for Android that you install yourself. You sign in with your usual Spotify account, on Spotify's own login page: Myspoti never sees your password. A free account is enough.
+Spotifai is a Spotify app for Android that you install yourself. You sign in with your usual Spotify account, on Spotify's own login page: Spotifai never sees your password. A free account is enough.
 
-Under the hood, the official Spotify Web Player plays the music, hidden inside the app, with your phone's DRM. Myspoti draws its own screens on top and drives it. Your plays are reported to Spotify exactly as in a browser: they count for the artists, in your history and in your Wrapped.
+Under the hood, the official Spotify Web Player plays the music, hidden inside the app, with your phone's DRM. Spotifai draws its own screens on top and drives it. Your plays are reported to Spotify exactly as in a browser: they count for the artists, in your history and in your Wrapped.
 
 ## Get started
 
@@ -56,7 +61,7 @@ Obtainium (add `https://github.com/kota-zo/myspoti`; the stable app and the beta
 **Listening**
 - No ads (see above).
 - Home, search, Browse, New releases, Your Library with folders, artist, album, playlist and profile pages, with Spotify's own content.
-- Pick any song: shuffle (Spotify's, or Myspoti's own that plays every song once before any repeats), Smart Shuffle, the queue (drag to reorder), repeat (all, the song for good, the song once), crossfade, sleep timer.
+- Pick any song: shuffle (Spotify's, or Spotifai's own that plays every song once before any repeats), Smart Shuffle, the queue (drag to reorder), repeat (all, the song for good, the song once), crossfade, sleep timer.
 - For extension, downloaded and device songs: a 10-band **equalizer** with presets, playback speed and skip silence; **Stats for nerds** shows the codec, sample rate, bit depth, bitrate and output of what plays.
 - Podcasts and audiobooks, with their own player (speed, ±15 s, mark as played).
 - Spotify Connect, Jam, Bluetooth with your headphones' name, lock screen, notification, widget and Android Auto.
@@ -74,7 +79,7 @@ Obtainium (add `https://github.com/kota-zo/myspoti`; the stable app and the beta
 
 **Offline**
 - With a download-source extension installed: download songs, albums, playlists and Liked Songs, in the formats the extension offers (or re-encoded to small AAC on the phone).
-- Downloads are encrypted and stay in Myspoti. Lists you downloaded stay in step with Spotify.
+- Downloads are encrypted and stay in Spotifai. Lists you downloaded stay in step with Spotify.
 - Your local audio files too.
 
 **Extensions**
@@ -124,17 +129,17 @@ Two looks, switched in Settings, Display.
 
 ## Questions
 
-**Is it safe for my account?** Myspoti talks to Spotify the way its web player does, and you sign in on Spotify's own page. Blocking ads is still against Spotify's Terms of Use (see the disclaimer below).
+**Is it safe for my account?** Spotifai talks to Spotify the way its web player does, and you sign in on Spotify's own page. Blocking ads is still against Spotify's Terms of Use (see the disclaimer below).
 
 **"Spotify refused to play this"?** Some new or free accounts get refused by Spotify. Settings → **Export a diagnostic report** and send it on [Discord](https://discord.gg/jXKnGVFnGS) or in an [issue](https://github.com/kota-zo/myspoti/issues): it holds the app's recent log (what Spotify answered) and your phone's model, never your password or your login tokens.
 
-**Do downloads count in my Wrapped?** They always count in Myspoti's own recap. With **Sync downloaded songs with Spotify** (Settings → Playback, on by default), a downloaded song played online also plays muted on Spotify so your other devices see and control it; whether Spotify counts that play is up to Spotify and not guaranteed. Offline, or with the setting off, the file plays only from the phone and nothing is reported. Streamed songs and music videos count as usual.
+**Do downloads count in my Wrapped?** They always count in Spotifai's own recap. With **Sync downloaded songs with Spotify** (Settings → Playback, on by default), a downloaded song played online also plays muted on Spotify so your other devices see and control it; whether Spotify counts that play is up to Spotify and not guaranteed. Offline, or with the setting off, the file plays only from the phone and nothing is reported. Streamed songs and music videos count as usual.
 
 **What leaves my phone?** Your plays go to Spotify. Lyrics are looked up on lyrics sites, song meanings on Genius, translations on Google Translate, music videos on YouTube, and downloads on the hosts your download-source extension names (shown before you install it). Nothing is sent to the developer.
 
 ## Not included
 
-- No DRM circumvention, and no Spotify audio download: offline songs come from the download-source extension you install, and a song it has no file for is marked unavailable. Myspoti ships no download source of its own.
+- No DRM circumvention, and no Spotify audio download: offline songs come from the download-source extension you install, and a song it has no file for is marked unavailable. Spotifai ships no download source of its own.
 - No ad is ever marked as heard.
 
 ## Disclaimer
@@ -145,7 +150,7 @@ Not affiliated with or endorsed by Spotify. Spotify is a trademark of Spotify AB
 
 ## Support
 
-Myspoti is free, has no ads and is made in my spare time. If you enjoy it, you can support it on [Ko-fi](https://ko-fi.com/myspoti) or [GitHub Sponsors](https://github.com/sponsors/kota-zo), also from **About** in the app. Nothing is locked behind a donation.
+Spotifai is free, has no ads and is made in my spare time. If you enjoy it, you can support it on [Ko-fi](https://ko-fi.com/myspoti) or [GitHub Sponsors](https://github.com/sponsors/kota-zo), also from **About** in the app. Nothing is locked behind a donation.
 
 News, help and ideas: the [Discord server](https://discord.gg/jXKnGVFnGS). Bugs and requests: [GitHub issues](https://github.com/kota-zo/myspoti/issues).
 
@@ -188,7 +193,9 @@ Full notices: [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
 
 ## License
 
-GPL-3.0. If you reuse this code, you must credit Myspoti, keep the license notices and
+GPL-3.0. Spotifai is a fork of [Myspoti](https://github.com/kota-zo/myspoti) by kota-zo, and
+the original author's copyright and license notices are kept in this repository (see
+[`LICENSE`](LICENSE) and [`AGENTS.md`](AGENTS.md)). If you reuse this code, you must credit
+Myspoti (https://github.com/kota-zo/myspoti) as the origin, keep the license notices and
 publish your complete source under GPL-3.0. Closed-source or uncredited copies are
-violations and will be reported to the hosting platform (DMCA takedown). See also
-[`AGENTS.md`](AGENTS.md).
+violations and will be reported to the hosting platform (DMCA takedown).

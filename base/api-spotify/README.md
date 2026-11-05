@@ -1,6 +1,6 @@
 # api-spotify
 
-Spotify implementation of the Myspoti API (`:api`), on top of the official Web Player.
+Spotify implementation of the Spotifai API (`:api`), on top of the official Web Player.
 
 ## Modules
 
@@ -62,10 +62,10 @@ The same file runs in the Android WebView and in desktop Chrome over CDP.
 
 | Direction | Android | Desktop (CDP) |
 |---|---|---|
-| Host → page | `evaluateJavascript("Myspoti.call(id, method, args)")` | `Runtime.evaluate`, same call |
+| Host → page | `evaluateJavascript("Spotifai.call(id, method, args)")` | `Runtime.evaluate`, same call |
 | Page → host | `MyspotiHost.postMessage(json)` (web message listener, open.spotify.com only) | `Runtime.addBinding("__mspHostPost")` |
 
-`Myspoti.call` also returns a Promise, but hosts should rely on the `result` message:
+`Spotifai.call` also returns a Promise, but hosts should rely on the `result` message:
 Android's `evaluateJavascript` does not wait for Promises.
 
 ### Messages (page → host)

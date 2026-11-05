@@ -63,7 +63,7 @@ object AutoplayPref {
 }
 
 /**
- * "Myspoti shuffle" (off by default): with shuffle on, a list plays every one of its songs once, in
+ * "Spotifai shuffle" (off by default): with shuffle on, a list plays every one of its songs once, in
  * an order Myspoti draws, before it starts over, instead of Spotify's shuffle (see
  * [com.music.spotui.di.AppShuffle]). Off: Spotify shuffles, as before.
  */

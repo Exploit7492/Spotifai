@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Myspoti's own texts (English default, French, Italian, Greek). -->
+<!-- Spotifai's own texts (English default, French, Italian, Greek). -->
 <resources>
     <string name="welcome_lead">Η μουσική σου,</string>
     <string name="welcome_rotate_ads">χωρίς διαφημίσεις.</string>
@@ -7,7 +7,7 @@
     <string name="welcome_rotate_clips">με τα επίσημα βίντεο.</string>
     <string name="welcome_rotate_offline">εκτός σύνδεσης, μέσω επεκτάσεων.</string>
     <string name="welcome_login">Σύνδεση με Spotify</string>
-    <string name="welcome_privacy">Συνδέεσαι στη σελίδα του Spotify. Το Myspoti δεν βλέπει ποτέ τον κωδικό σου.</string>
+    <string name="welcome_privacy">Συνδέεσαι στη σελίδα του Spotify. Το Spotifai δεν βλέπει ποτέ τον κωδικό σου.</string>
     <string name="remove_from_liked">Κατάργηση από τα τραγούδια που σου αρέσουν</string>
     <string name="repeat_on">Επανάληψη: ενεργή</string>
     <string name="repeat_one">Επανάληψη ενός τραγουδιού</string>
@@ -56,7 +56,7 @@
     <string name="background_playback_title">Αναπαραγωγή στο παρασκήνιο</string>
     <string name="background_playback_on">Η βελτιστοποίηση μπαταρίας είναι απενεργοποιημένη: η μουσική και το Spotify Connect συνεχίζουν με την οθόνη σβηστή.</string>
     <string name="background_playback_off">Απενεργοποίησε τη βελτιστοποίηση μπαταρίας, ώστε το Android να μην σταματά την εφαρμογή στο παρασκήνιο.</string>
-    <string name="background_playback_samsung">Η Samsung μπορεί και πάλι να βάλει το Myspoti σε αναστολή με την οθόνη σβηστή. Πρόσθεσέ το στις «Εφαρμογές που δεν μπαίνουν ποτέ σε αναστολή»: Ρυθμίσεις &gt; Μπαταρία &gt; Όρια χρήσης στο παρασκήνιο.</string>
+    <string name="background_playback_samsung">Η Samsung μπορεί και πάλι να βάλει το Spotifai σε αναστολή με την οθόνη σβηστή. Πρόσθεσέ το στις «Εφαρμογές που δεν μπαίνουν ποτέ σε αναστολή»: Ρυθμίσεις &gt; Μπαταρία &gt; Όρια χρήσης στο παρασκήνιο.</string>
     <string name="background_playback_open">Άνοιγμα ρυθμίσεων εφαρμογής</string>
     <plurals name="local_files_count">
         <item quantity="one">%d κομμάτι</item>
@@ -65,7 +65,7 @@
     <string name="local_files_none_subtitle">Δεν βρέθηκαν αρχεία ήχου που να μπορούν να παιχτούν σε αυτή τη συσκευή. Όταν υπάρχουν, θα εμφανίζονται εδώ.</string>
     <string name="downloads_empty_title">Κάνε λήψη για να ακούς εκτός σύνδεσης</string>
     <string name="downloads_empty_subtitle">Πάτα Λήψη στο μενού ενός τραγουδιού, ή το κουμπί λήψης ενός άλμπουμ ή μιας playlist.</string>
-    <string name="downloads_source">Lossless FLAC, ελεγμένο με την αρχική ηχογράφηση. Μένει αποθηκευμένο μόνο μέσα στο Myspoti.</string>
+    <string name="downloads_source">Lossless FLAC, ελεγμένο με την αρχική ηχογράφηση. Μένει αποθηκευμένο μόνο μέσα στο Spotifai.</string>
     <string name="downloads_size">%1$s σε αυτό το τηλέφωνο</string>
     <string name="download_unavailable">Δεν βρέθηκε αντίστοιχη ηχογράφηση</string>
     <string name="download_retry">Δοκίμασε ξανά</string>
@@ -75,8 +75,8 @@
     <string name="playlist_not_found">Η playlist δεν βρέθηκε</string>
     <string name="browse_new_releases">Νέες κυκλοφορίες</string>
     <string name="language_auto">Αυτόματη</string>
-    <string name="language_auto_detail">Η γλώσσα του τηλεφώνου σου, όταν το Myspoti τη διαθέτει (αγγλικά, γαλλικά, γερμανικά, ελληνικά, ισπανικά, ιταλικά, κινεζικά, πολωνικά, πορτογαλικά, ρωσικά), αλλιώς αγγλικά</string>
-    <string name="language_partial_note">Άλλες γλώσσες: οι ετικέτες του ίδιου του Spotify μεταφράζονται, τα κείμενα του Myspoti μένουν στα αγγλικά.</string>
+    <string name="language_auto_detail">Η γλώσσα του τηλεφώνου σου, όταν το Spotifai τη διαθέτει (αγγλικά, γαλλικά, γερμανικά, ελληνικά, ισπανικά, ιταλικά, κινεζικά, πολωνικά, πορτογαλικά, ρωσικά), αλλιώς αγγλικά</string>
+    <string name="language_partial_note">Άλλες γλώσσες: οι ετικέτες του ίδιου του Spotify μεταφράζονται, τα κείμενα του Spotifai μένουν στα αγγλικά.</string>
     <string name="restart_player_title">Επανεκκίνηση του player</string>
     <string name="restart_player_detail">Αν η μουσική σταματήσει να ανταποκρίνεται: φορτώνει ξανά το player του Spotify</string>
     <string name="local_playlist_subtitle">Σε αυτή τη συσκευή</string>
@@ -90,21 +90,21 @@
     <string name="playlist_change_refused">Το Spotify απέρριψε την αλλαγή σε αυτή την playlist</string>
     <string name="download_kept_by_list">Εξακολουθεί να έχει ληφθεί: τη διατηρεί μια playlist που έχει ληφθεί</string>
     <string name="download_kept_by_named">Εξακολουθεί να έχει ληφθεί: το «%1$s» έχει ληφθεί και το περιέχει</string>
-    <string name="support_title">Στήριξε το Myspoti</string>
-    <string name="support_body">Το Myspoti είναι δωρεάν, χωρίς διαφημίσεις, και φτιάχνεται στον ελεύθερο χρόνο μου. Αν σου αρέσει, μια μικρή δωρεά βοηθά να συνεχίσει.</string>
+    <string name="support_title">Στήριξε το Spotifai</string>
+    <string name="support_body">Το Spotifai είναι δωρεάν, χωρίς διαφημίσεις, και φτιάχνεται στον ελεύθερο χρόνο μου. Αν σου αρέσει, μια μικρή δωρεά βοηθά να συνεχίσει.</string>
     <string name="support_action">Στήριξε στο Ko-fi</string>
     <string name="support_decline">Όχι, ευχαριστώ</string>
     <string name="support_row_detail">Μια μικρή δωρεά στο Ko-fi ή στο GitHub Sponsors βοηθά την εφαρμογή να συνεχίσει</string>
     <string name="supporter_perks_title">Ανταμοιβές υποστηρικτή</string>
     <string name="supporter_perks_detail">Χρώμα τόνου, εικονίδιο εφαρμογής και σήμα, ως ευχαριστία</string>
-    <string name="supporter_perks_locked">Ξεκλειδώνεται με τη στήριξη του Myspoti. Βασίζεται στον λόγο σου: δεν ελέγχεται τίποτα.</string>
-    <string name="supporter_i_supported">Έχω στηρίξει το Myspoti</string>
+    <string name="supporter_perks_locked">Ξεκλειδώνεται με τη στήριξη του Spotifai. Βασίζεται στον λόγο σου: δεν ελέγχεται τίποτα.</string>
+    <string name="supporter_i_supported">Έχω στηρίξει το Spotifai</string>
     <string name="supporter_how">Πώς το στήριξες;</string>
     <string name="supporter_once">Μία δωρεά</string>
     <string name="supporter_monthly">Κάθε μήνα</string>
     <string name="supporter_badge">Υποστηρικτής</string>
     <string name="supporter_thanks_title">Ευχαριστούμε για τη στήριξή σου!</string>
-    <string name="supporter_thanks_body">Αν το Myspoti εξακολουθεί να σου είναι χρήσιμο, μια νέα μικρή δωρεά βοηθά να συνεχίσει.</string>
+    <string name="supporter_thanks_body">Αν το Spotifai εξακολουθεί να σου είναι χρήσιμο, μια νέα μικρή δωρεά βοηθά να συνεχίσει.</string>
     <string name="support_again">Στήριξε ξανά</string>
     <string name="supporter_accent">Χρώμα τόνου</string>
     <string name="supporter_icon">Εικονίδιο εφαρμογής</string>
@@ -127,7 +127,7 @@
     <string name="song_radio_name">Ραδιόφωνο: %1$s</string>
     <string name="local_files_find_hint">Αναζήτηση στα Τοπικά αρχεία</string>
     <string name="data_saver_title">Εξοικονόμηση δεδομένων</string>
-    <string name="data_saver_summary">Με δεδομένα κινητής, το Myspoti δεν χρησιμοποιεί δεδομένα: παίζουν μόνο τα ληφθέντα τραγούδια και τα Τοπικά αρχεία</string>
+    <string name="data_saver_summary">Με δεδομένα κινητής, το Spotifai δεν χρησιμοποιεί δεδομένα: παίζουν μόνο τα ληφθέντα τραγούδια και τα Τοπικά αρχεία</string>
     <string name="data_saver_blocked">Εξοικονόμηση δεδομένων: με δεδομένα κινητής, παίζουν μόνο τα ληφθέντα τραγούδια και τα Τοπικά αρχεία</string>
     <string name="new_releases_followed">Από καλλιτέχνες που ακολουθείς</string>
     <string name="new_releases_latest">Τελευταίες κυκλοφορίες</string>
@@ -148,7 +148,7 @@
     <string name="recap_top_tracks">Κορυφαία τραγούδια</string>
     <string name="recap_top_artists">Κορυφαίοι καλλιτέχνες</string>
     <string name="recap_top_albums">Κορυφαία άλμπουμ</string>
-    <string name="recap_private_note">Μετράει όλα όσα παίζονται στο Myspoti (Spotify, λήψεις, τοπικά αρχεία). Μένει σε αυτό το τηλέφωνο και δεν στέλνεται ποτέ στο Spotify.</string>
+    <string name="recap_private_note">Μετράει όλα όσα παίζονται στο Spotifai (Spotify, λήψεις, τοπικά αρχεία). Μένει σε αυτό το τηλέφωνο και δεν στέλνεται ποτέ στο Spotify.</string>
     <string name="recap_detail">Περιλαμβάνει την ακρόασή σου, τις λήψεις και τα τοπικά αρχεία</string>
     <string name="track_credits">Συντελεστές</string>
     <string name="exclude_taste">Αφαίρεση από το προφίλ γούστου σου</string>
@@ -176,7 +176,7 @@
     <string name="track_sort_artist">Καλλιτέχνης</string>
     <string name="track_sort_album">Άλμπουμ</string>
     <string name="track_sort_duration">Διάρκεια</string>
-    <string name="setup_title">Ρύθμιση του Myspoti</string>
+    <string name="setup_title">Ρύθμιση του Spotifai</string>
     <string name="setup_subtitle">Επίτρεψε ό,τι θέλεις· μπορείς να το αλλάξεις αργότερα στις ρυθμίσεις του τηλεφώνου.</string>
     <string name="setup_notifications_title">Ειδοποιήσεις</string>
     <string name="setup_notifications_detail">Χειριστήρια στην κλειδωμένη οθόνη και στο πάνελ ειδοποιήσεων</string>
@@ -188,7 +188,7 @@
     <string name="setup_battery_detail">Η μουσική συνεχίζει με την οθόνη σβηστή</string>
     <string name="setup_enable">Επίτρεψε</string>
     <string name="setup_continue">Συνέχεια</string>
-    <string name="setup_intro_title">Πώς δουλεύει το Myspoti</string>
+    <string name="setup_intro_title">Πώς δουλεύει το Spotifai</string>
     <string name="setup_intro_subtitle">Τρία πράγματα πριν ξεκινήσεις.</string>
     <string name="setup_intro_spotify_title">Spotify, χωρίς διαφημίσεις</string>
     <string name="setup_intro_spotify_detail">Ο λογαριασμός σου, οι playlist και τα likes σου, από τον ίδιο τον web player του Spotify. Δουλεύουν και οι δωρεάν λογαριασμοί.</string>
@@ -197,16 +197,16 @@
     <string name="setup_intro_ext_title">Επεκτάσεις, αν θέλεις</string>
     <string name="setup_intro_ext_detail">Πρόσθετα από την κοινότητα: άλλες πηγές ήχου, λήψεις και άλλα. Περισσότερα σε λίγο.</string>
     <string name="setup_ext_title">Επεκτάσεις</string>
-    <string name="setup_ext_subtitle">Το Myspoti δουλεύει όπως είναι: παίζει Spotify. Οι επεκτάσεις είναι προαιρετικά πρόσθετα από την κοινότητα που κάνουν περισσότερα.</string>
+    <string name="setup_ext_subtitle">Το Spotifai δουλεύει όπως είναι: παίζει Spotify. Οι επεκτάσεις είναι προαιρετικά πρόσθετα από την κοινότητα που κάνουν περισσότερα.</string>
     <string name="setup_ext_audio_title">Άλλες πηγές ήχου</string>
     <string name="setup_ext_audio_detail">Μια επέκταση μπορεί να παίζει τα τραγούδια σου από άλλη πηγή, στην ποιότητα που προσφέρει.</string>
     <string name="setup_ext_download_title">Λήψεις</string>
-    <string name="setup_ext_download_detail">Για ακρόαση εκτός σύνδεσης, εγκατέστησε μια επέκταση λήψεων. Τα τραγούδια μένουν κρυπτογραφημένα στο Myspoti.</string>
+    <string name="setup_ext_download_detail">Για ακρόαση εκτός σύνδεσης, εγκατέστησε μια επέκταση λήψεων. Τα τραγούδια μένουν κρυπτογραφημένα στο Spotifai.</string>
     <string name="setup_ext_more_title">Και άλλα</string>
     <string name="setup_ext_more_detail">Ενότητες αρχικής, σελίδες και εργαλεία από τους δημιουργούς τους.</string>
     <string name="setup_ext_safe_title">Εσύ έχεις τον έλεγχο</string>
     <string name="setup_ext_safe_detail">Πριν την εγκατάσταση δείχνει τι μπορεί να κάνει. Για οτιδήποτε άλλο ρωτά ξανά, και μπορείς να την αφαιρέσεις όποτε θέλεις.</string>
-    <string name="setup_ext_where">Θα τις βρεις στις Ρυθμίσεις, Επεκτάσεις, από GitHub, GitLab και Codeberg. Τις γράφουν οι δημιουργοί τους, όχι το Myspoti.</string>
+    <string name="setup_ext_where">Θα τις βρεις στις Ρυθμίσεις, Επεκτάσεις, από GitHub, GitLab και Codeberg. Τις γράφουν οι δημιουργοί τους, όχι το Spotifai.</string>
     <string name="setup_ext_browse">Δες τις επεκτάσεις</string>
     <string name="setup_ext_later">Αργότερα</string>
     <string name="local_folders_button">Φάκελοι</string>
@@ -240,7 +240,7 @@
     <string name="quality_download_hires">FLAC Hi-Res</string>
     <string name="quality_download_hires_detail">24-bit όταν υπάρχει, αρχεία περίπου τρεις φορές μεγαλύτερα</string>
     <string name="setup_quality_title">Ποιότητα ήχου</string>
-    <string name="setup_quality_subtitle">Επίλεξε πώς παίζει και αποθηκεύει το Myspoti τη μουσική σου. Μπορείς να την αλλάξεις αργότερα στις Ρυθμίσεις.</string>
+    <string name="setup_quality_subtitle">Επίλεξε πώς παίζει και αποθηκεύει το Spotifai τη μουσική σου. Μπορείς να την αλλάξεις αργότερα στις Ρυθμίσεις.</string>
     <string name="downloads_off_toast">Οι λήψεις είναι απενεργοποιημένες. Ενεργοποίησέ τες στις Ρυθμίσεις.</string>
     <string name="quality_streaming_high_detail">160 kbit/s, ο καλύτερος ήχος</string>
     <string name="quality_download_small">Μικρότερη</string>
@@ -254,7 +254,7 @@
     <string name="quality_now_unknown">Ακόμα άγνωστο: ξεκίνα ένα τραγούδι</string>
     <string name="update_downloading">Λήψη… %1$d%%</string>
     <string name="update_installing">Εγκατάσταση…</string>
-    <string name="update_needs_permission">Για να ενημερωθείς, επίτρεψε στο Myspoti να εγκαθιστά εφαρμογές και μετά επέστρεψε εδώ.</string>
+    <string name="update_needs_permission">Για να ενημερωθείς, επίτρεψε στο Spotifai να εγκαθιστά εφαρμογές και μετά επέστρεψε εδώ.</string>
     <string name="update_allow">Επίτρεψε</string>
     <string name="update_failed">Η ενημέρωση απέτυχε: %1$s</string>
     <string name="update_retry">Δοκίμασε ξανά</string>
@@ -320,9 +320,9 @@
     <string name="share_as_image">Κοινοποίηση ως εικόνα</string>
     <string name="settings_autoplay_title">Αυτόματη αναπαραγωγή</string>
     <string name="settings_autoplay_detail">Όταν τελειώνει η μουσική σου, συνεχίζει με παρόμοια τραγούδια</string>
-    <string name="myspoti_shuffle_title">Τυχαία σειρά Myspoti</string>
+    <string name="myspoti_shuffle_title">Τυχαία σειρά Spotifai</string>
     <string name="myspoti_shuffle_detail">Με ενεργή την τυχαία σειρά, μια λίστα αναπαραγωγής, ένα άλμπουμ ή τα τραγούδια που σου αρέσουν παίζει κάθε τραγούδι μία φορά, με τυχαία σειρά, πριν ξεκινήσει ξανά. Ανενεργή: η τυχαία σειρά του Spotify. Ένας δωρεάν λογαριασμός μπορεί να κρατά την τυχαία σειρά του Spotify σε ορισμένες λίστες.</string>
-    <string name="myspoti_shuffle_imposed">Το Spotify κρατά τη δική του τυχαία σειρά σε αυτή τη λίστα για τον λογαριασμό σου: η τυχαία σειρά Myspoti είναι ανενεργή γι\' αυτήν.</string>
+    <string name="myspoti_shuffle_imposed">Το Spotify κρατά τη δική του τυχαία σειρά σε αυτή τη λίστα για τον λογαριασμό σου: η τυχαία σειρά Spotifai είναι ανενεργή γι\' αυτήν.</string>
     <string name="settings_rotation_title">Περιστροφή οθόνης</string>
     <string name="settings_rotation_portrait">Κατακόρυφη</string>
     <string name="settings_rotation_auto">Αυτόματη</string>
@@ -383,7 +383,7 @@
     <string name="settings_check_update_title">Έλεγχος για ενημερώσεις τώρα</string>
     <string name="settings_check_update_detail">Αναζητά νεότερη έκδοση και προτείνει την εγκατάστασή της</string>
     <string name="settings_update_checking">Έλεγχος…</string>
-    <string name="settings_update_check_latest">Το Myspoti είναι ενημερωμένο</string>
+    <string name="settings_update_check_latest">Το Spotifai είναι ενημερωμένο</string>
     <string name="downloads_stop_all_title">Διακοπή όλων των λήψεων</string>
     <string name="downloads_stop_all_detail">Ακυρώνει ό,τι απομένει· τα τραγούδια που έχουν ήδη ληφθεί διατηρούνται</string>
     <string name="context_menu_remove_from_playlist">Αφαίρεση από αυτή την playlist</string>
@@ -429,7 +429,7 @@
     <string name="player_forward_15">Μπροστά 15 δευτερόλεπτα</string>
     <string name="player_sleep_timer">Χρονοδιακόπτης ύπνου</string>
     <string name="settings_keep_playing_title">Συνέχιση αναπαραγωγής μετά το κλείσιμο</string>
-    <string name="settings_keep_playing_detail">Απενεργοποιημένο: το κλείσιμο του Myspoti από τις πρόσφατες εφαρμογές σταματά τη μουσική</string>
+    <string name="settings_keep_playing_detail">Απενεργοποιημένο: το κλείσιμο του Spotifai από τις πρόσφατες εφαρμογές σταματά τη μουσική</string>
     <string name="recommended_songs_from_name">Με βάση το όνομα αυτής της playlist</string>
     <string name="recommended_songs_from_songs">Με βάση το περιεχόμενο αυτής της playlist</string>
     <string name="recommended_songs_refresh">Ανανέωση</string>
@@ -606,7 +606,7 @@
         <item quantity="other">%d τραγούδια θα παίξουν μετά</item>
     </plurals>
     <string name="queue_list_none">Κανένα από αυτά τα τραγούδια δεν μπορεί να μπει στην ουρά</string>
-    <string name="setup_ext_download_mornye_detail">Οι λήψεις και άλλες πηγές ήχου προέρχονται από επεκτάσεις. Εγκαταστήστε το Mornye στην επόμενη σελίδα για να κατεβάζετε τραγούδια και να ακούτε εκτός σύνδεσης. Τα τραγούδια μένουν κρυπτογραφημένα στο Myspoti.</string>
+    <string name="setup_ext_download_mornye_detail">Οι λήψεις και άλλες πηγές ήχου προέρχονται από επεκτάσεις. Εγκαταστήστε το Mornye στην επόμενη σελίδα για να κατεβάζετε τραγούδια και να ακούτε εκτός σύνδεσης. Τα τραγούδια μένουν κρυπτογραφημένα στο Spotifai.</string>
     <string name="setup_ext_home">Μετάβαση στην Αρχική</string>
     <string name="show_filter_all">Προεπιλεγμένη σειρά</string>
     <string name="show_filter_all_played">Όλα τα επεισόδια έχουν ακουστεί.</string>
