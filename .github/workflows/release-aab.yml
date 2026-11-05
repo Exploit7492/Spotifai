@@ -99,21 +99,38 @@ jobs:
           fi
 
           # The channel key is the duplicate guard: it needs no token and answers 404 when
-          # the store does not yet hold this exact version.
+          # the store does not yet hold this exact version. The store sleeps on its free
+          # plan, so the first request of the day can take minutes or answer 502 while it
+          # wakes: wake it, retry, and treat a wake-up failure as "not published yet"
+          # rather than blocking the build. The upload itself is the authority on
+          # duplicates, so a wrong guess here cannot double-publish.
           if [ "$publish" = "true" ]; then
             [ -n "${ZEALOT_URL:-}" ] || fail "repository variable ZEALOT_URL is not set"
             [ -n "${ZEALOT_CHANNEL_KEY:-}" ] || fail "repository variable ZEALOT_CHANNEL_KEY is not set"
-            status=$(curl -sS -G -o "$RUNNER_TEMP/exist.json" -w '%{http_code}' \
-              --max-time 120 --retry 3 --retry-delay 5 \
-              --data-urlencode "channel_key=$ZEALOT_CHANNEL_KEY" \
-              --data-urlencode "bundle_id=$bundle_id" \
-              --data-urlencode "release_version=$name" \
-              --data-urlencode "build_version=$code" \
-              "${ZEALOT_URL%/}/api/apps/version_exist") || fail "could not reach the store"
+            base="${ZEALOT_URL%/}"
+            echo "waking the store (it sleeps on the free plan)..."
+            curl -sS -o /dev/null -w 'wake-up: %{http_code}\n' --max-time 300 \
+              "$base/api/apps/version_exist" || echo "wake-up request did not finish; continuing"
+            status=""
+            for attempt in 1 2 3 4 5; do
+              status=$(curl -sS -G -o "$RUNNER_TEMP/exist.json" -w '%{http_code}' \
+                --max-time 180 \
+                --data-urlencode "channel_key=$ZEALOT_CHANNEL_KEY" \
+                --data-urlencode "bundle_id=$bundle_id" \
+                --data-urlencode "release_version=$name" \
+                --data-urlencode "build_version=$code" \
+                "$base/api/apps/version_exist") || status=000
+              case "$status" in
+                200|404) break;;
+              esac
+              echo "the store answered $status on attempt $attempt; retrying in 20s"
+              sleep 20
+            done
             case "$status" in
               200) release=false; note="the store already holds $name ($code)";;
               404) ;;
-              *) head -c 800 "$RUNNER_TEMP/exist.json" || true; echo; fail "the store answered $status to version_exist";;
+              *) echo "::warning::the store could not confirm whether $name ($code) exists; publishing anyway"
+                 release=true;;
             esac
           fi
 
@@ -207,6 +224,12 @@ jobs:
           base="${ZEALOT_URL%/}"
           echo "::add-mask::$ZEALOT_APP_TOKEN"
           changelog="Version $NAME (build $CODE), commit ${GITHUB_SHA:0:7}."
+
+          # The store sleeps on its free plan; wake it before the multipart POST so the
+          # request does not spend its first minute waiting on the cold start.
+          echo "waking the store before the upload..."
+          curl -sS -o /dev/null -w 'wake-up: %{http_code}\n' --max-time 300 \
+            "$base/api/apps/version_exist" || echo "wake-up request did not finish; continuing"
 
           # POST /api/apps/upload is a single multipart request: Zealot parses the
           # bundle, re-signs it with the organisation key and publishes the release.
