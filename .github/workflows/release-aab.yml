@@ -2,9 +2,8 @@
 #
 # Why a bundle and not an APK: the store signs and splits the upload itself, so the
 # app never needs its release keystore in CI. The bundle is built with a throwaway
-# keystore (which only satisfies Gradle's signing config and is discarded), uploaded
-# through the store's direct-upload session API, and re-signed there before the
-# release goes live.
+# keystore (which only satisfies Gradle's signing config and is discarded), posted to
+# the store's upload API, and re-signed there before the release goes live.
 #
 # The upload only runs on main, and only when the repository variable AUTO_RELEASE is
 # "true", so a merge builds and checks the bundle without shipping it. A manual run
