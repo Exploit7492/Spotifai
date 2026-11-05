@@ -1,0 +1,5 @@
+Spotifai 2.3.0
+
+First release of Spotifai, a rebranded fork of Myspoti (GPL-3.0).
+The app now calls itself Spotifai everywhere you see it; the
+underlying engine and extension API are unchanged.
