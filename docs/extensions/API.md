@@ -1,6 +1,6 @@
-# Myspoti extensions: API for authors
+# Spotifai extensions: API for authors
 
-An extension is a small JavaScript file plus a `manifest.json`. Myspoti runs it in a sandbox. What
+An extension is a small JavaScript file plus a `manifest.json`. Spotifai runs it in a sandbox. What
 it may do is a list of **actions** from a closed catalogue the app defines (section 4): provide
 lyrics or song details, add Home sections, search results, menu entries or player buttons (as
 native blocks the app draws itself, section 3), give a song's audio or download files, show its own
@@ -60,14 +60,14 @@ order and dates), so anyone can rebuild it and compare the sha256.
 How an extension reaches people: its own GitHub repository, found by the store through the topic
 `myspoti-extension` (section 9), the official repository's optional list of verified extensions or a repository the user adds at their own risk. A repository is a folder of packages
 and an `index.json` (`myspoti-ext index <folder> <name>` writes it). The index can also list
-extensions every Myspoti must turn off (`blocked`: an id, optionally some package sha256, a reason).
+extensions every Spotifai must turn off (`blocked`: an id, optionally some package sha256, a reason).
 
 An index entry is the manifest's fields (`id`, `name`, `version`, `versionCode`, `apiVersion`,
 `author`, `description`, `actions` (or the old `provides` and `permissions`), `homepage`, `replaces`,
 `conflicts_with`) plus `repo` (optional: `owner/name` on GitHub, the package is then read from
 there as in section 9 and kept updated from there; `sha256`, when not empty, is checked against the
 release's package or the package built from the archive) and the package's `url` (absolute
-or relative to the index), `sha256` and `size`, and these optional store fields (an older Myspoti
+or relative to the index), `sha256` and `size`, and these optional store fields (an older Spotifai
 ignores them, an index without them still reads):
 
 | Field | Type | Shown |
@@ -75,7 +75,7 @@ ignores them, an index without them still reads):
 | `icon_url` | string | The icon before download: a PNG, absolute or relative to the index (`myspoti-ext index` writes `icons/<id>.png`). `icon`, the older name, is still read. |
 | `updated_at` | string | ISO 8601 date the version was listed (`2026-10-23`); `index` keeps it while the package's sha256 is unchanged. |
 | `category`, `tags`, `changelog` | | As in the manifest. |
-| `min_app_version` | string | As the manifest's `minAppVersion`: the row says "Requires Myspoti X or newer" and its Install button is off. |
+| `min_app_version` | string | As the manifest's `minAppVersion`: the row says "Requires Spotifai X or newer" and its Install button is off. |
 
 In the app, Extensions has two tabs. **Store**: each repository with its trust note (verified by the
 owner, or added by the user), a search field and category chips, and one row per extension
@@ -85,14 +85,14 @@ button: Install, Update, Installed; "Incompatible with X (installed)" when `conf
 action's icon, label and your `why`, repository, sha256) before anything is downloaded; Install
 then shows the install prompt: name, author and source, every action with your `why` (critical
 ones marked), what it collides with (the user picking which to keep, section 4.2), the third-party
-notice ("Third-party extension, not reviewed by Myspoti, under its author's responsibility.") and
+notice ("Third-party extension, not reviewed by Spotifai, under its author's responsibility.") and
 one box, "I understand this extension is made by a third party and I install it on my own
 responsibility", which enables Install. There is no per-action choice: an extension gets every
 action it lists, or is not installed. The official repository is suggested, never added without the user.
 
 **Installed** is organised **by area**: Playback, Lyrics & song info, Audio & downloads, Home &
 search, Menus & player, Library & Spotify, Pages & more. Each area opens with a **Built-in** row (a
-dropdown of what Myspoti does there by itself, e.g. Lyrics: Spotify, LRCLIB, NetEase, KuGou,
+dropdown of what Spotifai does there by itself, e.g. Lyrics: Spotify, LRCLIB, NetEase, KuGou,
 Lyrics+, Genius; built-in sources are not extensions), then the extensions acting there with their
 switch and action icons, in the user's order (arrows; installation order until moved). That order
 is the one the area asks them in (section 3) and the one the playback arbiter uses. The Built-in row says in
@@ -112,7 +112,7 @@ extensions did there ("Lyrics of X from Y", "Skipped by Z") with a one-tap Turn 
 | `name` | string | required | 1 to 40 characters. |
 | `version` | string | required | 1 to 20 characters, shown to people (`"1.2.0"`). |
 | `versionCode` | int | `1` | 1 or more. Higher is newer; this is what is compared. |
-| `apiVersion` | int | `1` | Between 1 and 1 (the version this Myspoti speaks). |
+| `apiVersion` | int | `1` | Between 1 and 1 (the version this Spotifai speaks). |
 | `author` | string | required | 1 to 60 characters. |
 | `description` | string | `""` | 500 characters at most. |
 | `homepage` | string | none | Not checked. |
@@ -124,7 +124,7 @@ extensions did there ("Lyrics of X from Y", "Skipped by Z") with a one-tap Turn 
 | `icon` | string | none | A `.png` at the root of the package (square, 256 px or less). Without it, `icon.png` is used if the package has one, else a tile with the name's first letter. |
 | `category` | string | `other` | Where the store files it, one of a fixed list: `lyrics` (needs `lyrics.provide` or `trackinfo.provide`), `playback` (Playback & audio: a `playback.*`, `audio.source` or `player.buttons` action), `library` (`library.read`, `library.write` or `playlists.write`), `discovery` (`home.sections`, `search.provide` or `spotify.catalog`), `stats` (`playback.events` or `library.read`), `look` (Look & feel: a blocks action or `webview.page`), `social` (`network`, `library.read` or `spotify.catalog`), `tools`, `other`. A category the actions do not fit, or an unknown one, is filed under `other` (`myspoti-ext check` says so); an extension with `download.source` is always under `tools`. `tags` are shown and found by the search, not filtered on. |
 | `tags` | string[] | `[]` | 8 at most, each 1 to 24 characters: lower case letters, digits, spaces, `-`. The store's search finds them. |
-| `minAppVersion` | string | none | The oldest Myspoti it works on (`"2.0.2"`, `"2.0.2-beta.4"`), compared like semantic versions (a release is newer than its betas). An older Myspoti shows "Requires Myspoti 2.0.2 or newer" and does not install it. |
+| `minAppVersion` | string | none | The oldest Spotifai it works on (`"2.0.2"`, `"2.0.2-beta.4"`), compared like semantic versions (a release is newer than its betas). An older Spotifai shows "Requires Spotifai 2.0.2 or newer" and does not install it. |
 | `changelog` | string | `""` | What changed in this version, 2000 characters at most: shown on the store page and before an update. |
 | `welcome` | object | none | `{ "message": "...", "steps": ["...", "..."] }`, shown once right after the first install (not on updates): what the extension does (600 characters at most) and what is left to do (5 steps at most, 160 characters each). Older apps ignore it. |
 
@@ -180,7 +180,7 @@ A setting: `{ "key", "type", "label", "description", "default", "options", "sect
   the phone changes network and the value `get` gives changes with it, the `setting` event comes
   with `{ key, network: true }` (section 3). Ignored on `secret` and `button` (check refuses it).
 
-`myspoti.features` contains `settings.section` on a Myspoti that knows these three fields; an older
+`myspoti.features` contains `settings.section` on a Spotifai that knows these three fields; an older
 one ignores them (the setting is on your page, one value), so a manifest using them stays valid there.
 
 Settings are shown on the extension's page. Every installed extension that declares settings is also
@@ -300,17 +300,17 @@ needs `synced` and at least one line with `words`.
 `translation`, `romanization`, `voice`, `background` and `translationLanguage` are optional and
 additive: leave them out and nothing changes, and one of the wrong type (a number for a text, a
 `voice` that is not a number, `"v2"` or `"2"`) is ignored, never an error. A `translation` is shown in
-place of Myspoti's machine translation only when `translationLanguage` is sent and is the language
+place of Spotifai's machine translation only when `translationLanguage` is sent and is the language
 the reader asked for (the first part of the tag decides: `en` covers `en-US`); lines without one are
 machine translated. `voice` marks a duet when at least two different singers appear; `romanization`
-is for scripts that are not Latin (Japanese, Korean, Chinese, Cyrillic...). An older Myspoti
+is for scripts that are not Latin (Japanese, Korean, Chinese, Cyrillic...). An older Spotifai
 simply does not read these fields.
 
 Action: `lyrics.provide` (normal). Usually you also need `network`.
 
 ### `audio-source`
 
-Where the audio of a song is. The song then plays in Myspoti's own player, like a download;
+Where the audio of a song is. The song then plays in Spotifai's own player, like a download;
 Spotify's player does not play it. Action: `audio.source` (critical, ordered: the sources are
 asked in the user's order, Spotify included; the ones under Spotify are not asked).
 
@@ -326,8 +326,8 @@ asked in the user's order, Spotify included; the ones under Spotify are not aske
 
 **Lossless DASH.** Instead of `url`, `{ manifest, mimeType?, durationMs? }`: an MPEG-DASH manifest,
 base64 (1 MB at most), of FLAC in fragmented MP4 with a `SegmentTemplate` + `SegmentTimeline` and
-absolute https addresses (as a `dash-flac` download). Myspoti plays its segments in order as one
-file, seekable. Check `myspoti.features.indexOf('audio.manifest') >= 0` first: an older Myspoti has
+absolute https addresses (as a `dash-flac` download). Spotifai plays its segments in order as one
+file, seekable. Check `myspoti.features.indexOf('audio.manifest') >= 0` first: an older Spotifai has
 no `features` and needs a `url`. The song is asked for 10 s after the one before starts, so it starts
 at once.
 
@@ -336,11 +336,11 @@ and `ahead`: `true` when the app asks before the song plays (the next song of th
 the one before starts), `false` when it is about to play. An answer given ahead is kept and played as
 it is when the song comes (it is not asked again), so it must be just as playable; only the urgency
 differs: you may take more of the time, and leave out side work that only matters once the song
-plays. Check `myspoti.features.indexOf('audio.ahead') >= 0`: an older Myspoti does not send it.
+plays. Check `myspoti.features.indexOf('audio.ahead') >= 0`: an older Spotifai does not send it.
 
 **Quality.** `codec` (lower-case, 16 characters: `"flac"`, `"aac"`, `"mp3"`…), `bitDepth` (8 to 32)
 and `sampleRate` (Hz, 8000 to 768000) are what the song's sound-quality line shows while it plays
-("FLAC · 24-bit · 96 kHz"), with either answer. Myspoti shows what you announce, without checking or
+("FLAC · 24-bit · 96 kHz"), with either answer. Spotifai shows what you announce, without checking or
 rounding it up; a value out of range is left out. Without any of the three, your `source` text is
 shown instead (80 characters at most; feature `audio.source`), else nothing. Feature:
 `audio.quality`.
@@ -351,15 +351,15 @@ private address is an error. Note the returned `url` is checked for being public
 
 **When it is asked.** Every play of a song goes to the active `audio-source` extension first,
 wherever it starts: a list or an album, a search result, an artist, Home, Recents, shuffle, a
-Spotify link opened with Myspoti, another extension's block. It is asked for the picked song (or,
-for shuffle, a random one of the list); with an answer, that song plays in Myspoti's own player and
+Spotify link opened with Spotifai, another extension's block. It is asked for the picked song (or,
+for shuffle, a random one of the list); with an answer, that song plays in Spotifai's own player and
 the rest of the list follows as the queue, each song asked when its turn comes. Without an answer,
 the song plays on Spotify as usual. A song already downloaded plays from its file. Episodes, plays
 while offline or with data saver on, and plays while another Spotify Connect device is playing,
 never ask.
 
 **In the player.** The song stays the Spotify song: like, lyrics, Canvas, clip and queue work as
-usual, and "Play next" / "Add to queue" go into Myspoti's own queue (each song asked when its turn
+usual, and "Play next" / "Add to queue" go into Spotifai's own queue (each song asked when its turn
 comes). Your extension's name, then that quality line, is shown under the output device (a tap opens the sound-quality sheet), and your name beside the artist in the mini player. Picking a
 Spotify Connect device hands the song, its list and its place over to that device, played by
 Spotify.
@@ -369,9 +369,9 @@ Spotify.
 never reused). A song that starts after that asks you again. When the server refuses the address
 (HTTP 401, 403, 404 or 410), the answer is forgotten and you are asked once more for that song; a
 second refusal fails the song cleanly (the player moves on). Feature: `audio.expires` (an older
-Myspoti ignores `expiresInMs` and retries on 401 and 403 only).
+Spotifai ignores `expiresInMs` and retries on 401 and 403 only).
 
-**Starting at once.** For the next song, Myspoti also reads ahead the first 512 KB of a `url`
+**Starting at once.** For the next song, Spotifai also reads ahead the first 512 KB of a `url`
 (then asks the rest from there with an HTTP `Range`, sending your `headers`), or the first segment
 of a `manifest`, once per song, off mobile data, and drops it if the queue changes. A server that
 does not answer a range with 206 and a `Content-Range` total simply gets the whole file as before.
@@ -382,9 +382,9 @@ being downloaded, provide `audio-source` as well (the two may share their code).
 ### `download-source`
 
 Where a song can be downloaded from, and which file is the right recording: finding the audio,
-fetching what it needs and matching it to the song are the extension's job. Myspoti only keeps
+fetching what it needs and matching it to the song are the extension's job. Spotifai only keeps
 what you hand over: it downloads the file, runs the same checks on any file whatever its origin
-(below), encrypts it, and lists it in Downloaded. Myspoti never compares the file with a reference
+(below), encrypts it, and lists it in Downloaded. Spotifai never compares the file with a reference
 recording: if you want that check (an official preview, a fingerprint), do it in the extension
 before answering, and say `isrcMatched` only for a file you found by the song's ISRC. Without an
 extension providing this hook, downloads tell the user to install one. Action: `download.source`
@@ -414,10 +414,10 @@ a FLAC you return is then re-encoded to AAC on the phone). Return the files you 
 no `url` mean "nothing for this song". `dash-flac` takes `manifest` instead of `url`: an MPEG-DASH
 manifest (base64, 1 MB at most) of FLAC in fragmented MP4 (a `dfLa` box in the init segment),
 described by one `SegmentTemplate` with `initialization`, `media` using `$Number$`, and a
-`SegmentTimeline`; Myspoti fetches the segments with your `headers` and joins them into one FLAC
+`SegmentTimeline`; Spotifai fetches the segments with your `headers` and joins them into one FLAC
 file. Anything else a service needs (another manifest layout, decryption, an API call per
 segment, a token refresh) is yours to do: hand over a plain file `url`, or a manifest in that form.
-Myspoti tries the files in your order and keeps the first that passes the checks: a FLAC must be
+Spotifai tries the files in your order and keeps the first that passes the checks: a FLAC must be
 a real FLAC file (its header is read), an `m4a` or `mp3` must hold an audio track the phone can
 read, and the length must be the song's (Spotify's duration): not shorter by more than 5 s
 (previews are refused) nor longer by more than 15 s (another version). `m4a` and `mp3` are kept as
@@ -451,12 +451,12 @@ myspoti.provide('status', function () {
   throw, an answer that is not `{ live }` or no answer in 5 s proves nothing (a busy phone, a slow
   start): the extension stays in use, and its log says the probe had no answer.
 - Without a `status` hook an extension is always live. Check
-  `myspoti.features.indexOf('status') >= 0`: an older Myspoti never asks it.
+  `myspoti.features.indexOf('status') >= 0`: an older Spotifai never asks it.
 
 ### Outcomes (`results`)
 
 `lyrics`, `audio-source` and `download-source` may answer **why** they have nothing instead of
-`null`, when `myspoti.features.indexOf('results') >= 0` (an older Myspoti reads such an answer as no
+`null`, when `myspoti.features.indexOf('results') >= 0` (an older Spotifai reads such an answer as no
 answer, or as a malformed one: check the feature first):
 
 ```js
@@ -501,7 +501,7 @@ remove a listener.
 
 ### `playback` event
 
-`myspoti.on('playback', function (e) { ... })`: what happens to the song playing, in Myspoti's own
+`myspoti.on('playback', function (e) { ... })`: what happens to the song playing, in Spotifai's own
 player (downloads, local files, songs from an `audio-source` extension) and in the Spotify Web
 Player. Same rules as `track` (`playback.events`, 3 s per delivery, errors swallowed). Events arrive in
 order, one at a time.
@@ -511,7 +511,7 @@ order, one at a time.
   track,         // the track of this section
   positionMs, durationMs,
   timestamp,     // ms since 1970, UTC, when it happened
-  source,        // "local": Myspoti's own player; "spotify": the Web Player
+  source,        // "local": Spotifai's own player; "spotify": the Web Player
   contextUri,    // the list, album or artist it plays from; "" when unknown (a local file)
   shuffle,       // true or false
   reason,        // see below; null for progress, pause, resume
@@ -521,7 +521,7 @@ order, one at a time.
 ```
 
 `origin`: `spotify` is Spotify's own stream; `download` a song downloaded with a `download-source`
-extension (`providerId` is that extension; null for a download made before Myspoti kept it);
+extension (`providerId` is that extension; null for a download made before Spotifai kept it);
 `audio-source` a stream an `audio-source` extension gave (`providerId` is the one that answered);
 `local-file` a file on the phone that is not a download (`providerId: null`). An extension can use it
 to tell its own plays from the others', for example not to scrobble twice.
@@ -695,7 +695,7 @@ app frames them at run time (destructive Spotify writes are confirmed one by one
 and downloads are asked in the user's order; pages are locked down, sign-in pages have their own profile). The sandbox enforces exactly what the manifest
 declares: a call outside it throws (`"x is not in this extension's manifest (actions)"`). The user
 cannot untick single actions: installing grants all of them. An extension installed by an older
-Myspoti that let the user untick some stays off, with a "Waits for your OK" card on its page,
+Spotifai that let the user untick some stays off, with a "Waits for your OK" card on its page,
 until the user accepts them all with the same tick.
 
 | Action | Icon | Label | Level | Mode | Unlocks |
@@ -722,7 +722,7 @@ until the user accepts them all with the same tick.
 | `webview.page` | Web | Its own web page | **critical** | takeover | `page` and `message` hooks, `myspoti.page.post` |
 | `webview.auth` | Key | Sign in on a website | **critical** | takeover | `myspoti.auth.open`, `auth` event |
 | `storage` | Save | Keep its own data | normal | shared | `myspoti.storage` (512 KB) |
-| `attest` | Fingerprint | Prove this is Myspoti | normal | shared | `myspoti.attest` (section 10) |
+| `attest` | Fingerprint | Prove this is Spotifai | normal | shared | `myspoti.attest` (section 10) |
 
 ### 4.1 Old manifests
 
@@ -792,7 +792,7 @@ A script that throws while loading fails to load, with `file:line` in the messag
 |---|---|
 | `myspoti.apiVersion` | `1`. |
 | `myspoti.extension` | `{ id, name, version }` from the manifest. |
-| `myspoti.features` | What this Myspoti understands beyond the first API: `audio.manifest`, `audio.expires`, `audio.quality`, `audio.ahead` (section 3, `audio-source`), `http.all`, `status` (section 3), `results` (section 3, "Outcomes"), `settings.section` (section 2: a setting's `section`, `role`, `perNetwork`), `attest` (section 10, only when the user granted it). Missing on an older Myspoti: test `myspoti.features && myspoti.features.indexOf(name) >= 0`. |
+| `myspoti.features` | What this Spotifai understands beyond the first API: `audio.manifest`, `audio.expires`, `audio.quality`, `audio.ahead` (section 3, `audio-source`), `http.all`, `status` (section 3), `results` (section 3, "Outcomes"), `settings.section` (section 2: a setting's `section`, `role`, `perNetwork`), `attest` (section 10, only when the user granted it). Missing on an older Spotifai: test `myspoti.features && myspoti.features.indexOf(name) >= 0`. |
 | `myspoti.provide(hook, fn)` | Section 3. |
 | `myspoti.on('track' \| 'playback', fn)` | Section 3. Needs `playback.events`. |
 | `myspoti.on('auth', fn)` | Section 3, sign in. Needs `webview.auth`. |
@@ -807,8 +807,8 @@ A script that throws while loading fails to load, with `file:line` in the messag
 | `myspoti.query({ a: 1, b: 'x y' })` | `"a=1&b=x%20y"`. `null` and `undefined` values are left out. |
 | `myspoti.storage.get(key)` / `.set(key, value)` / `.remove(key)` | `storage`. Your own store, values are JSON. `get` of a missing key is `undefined`. 512 KB in all (keys plus values), then `set` throws `"storage full (512 KB)"`. |
 | `myspoti.settings.get(key)` | Section 2. |
-| `myspoti.player.current()` | The track playing in Myspoti (shape of section 3) or `null`. `playback.events`. |
-| `myspoti.player.play()`, `.pause()`, `.next()`, `.previous()`, `.seek(ms)` | Myspoti's own player. `playback.control`, through the arbiter (4.2). Return `true` if it was done. |
+| `myspoti.player.current()` | The track playing in Spotifai (shape of section 3) or `null`. `playback.events`. |
+| `myspoti.player.play()`, `.pause()`, `.next()`, `.previous()`, `.seek(ms)` | Spotifai's own player. `playback.control`, through the arbiter (4.2). Return `true` if it was done. |
 | `myspoti.ui.refresh(place)` | Section 3, blocks. The place's action. |
 | `myspoti.page.post(data)` | Section 3, pages. `webview.page`. |
 | `myspoti.spotify.<area>.<method>(...)` | Section 6. |
@@ -819,7 +819,7 @@ A script that throws while loading fails to load, with `file:line` in the messag
 | `myspoti.util.md5(s)`, `sha1(s)`, `sha256(s)` | Lower-case hex. |
 | `myspoti.util.hmacSha256(key, text)` | Lower-case hex. |
 
-`myspoti.player` (needs `playback.events` / `playback.control`) is Myspoti's own player. The
+`myspoti.player` (needs `playback.events` / `playback.control`) is Spotifai's own player. The
 Spotify account's player (what the Web Player is playing) is `myspoti.spotify.player`, with the
 playback actions.
 
@@ -874,7 +874,7 @@ and `"provides": []`.)
 
 ## 6. Spotify access
 
-`myspoti.spotify.<area>.<method>(...args)` talks to the account signed in to Myspoti. Areas:
+`myspoti.spotify.<area>.<method>(...args)` talks to the account signed in to Spotifai. Areas:
 `player`, `search`, `catalog`, `library`, `playlists`, `home`, `podcasts`, `users`, `extras`,
 `devices`, `recents`, `blends`, `raw`. The object is built from the app's own method table, so a
 method that is not in the tables below does not exist (`undefined`). Jam (live shared sessions) is
@@ -980,7 +980,7 @@ type means optional/nullable. Returns of "—" mean `null`.
 | `skipTo(item: {uri,uid?})` | — | write |  |
 | `moveInQueue(item: {uri,uid?}, target: {uri,uid?}, after = false)` | — | write |  |
 | `setVolume(level: number)` | — | write |  |
-| `setLocalMute(on: boolean)` | `playback.mirror` (critical) | write | Keeps Spotify playing unheard on this phone (`myspoti.features` has `player.localMute` only when the user granted `playback.mirror`). It can keep Spotify playing silently and counts listens on the user's Spotify account, so the user ticks the accept-risk box. Host rules, whatever the script does: honoured only while Myspoti's own local / extension player is playing; one extension at a time; at most one enable per 20 s; cleared by itself on track change, local pause or stop, the local track's duration, and when the extension is disabled, uninstalled, blocked or crashes. Refused while Myspoti's own Connect mirror (Settings, "Count extension plays on Spotify", on by default) plays the song on the page itself, and an extension's mirror ends when that one starts. Both players show "Spotify mirrored by <extension>", and the Activity log and Logbook record each enable and clear. Existing installs do not have it until the user accepts the action through the update / consent flow. |
+| `setLocalMute(on: boolean)` | `playback.mirror` (critical) | write | Keeps Spotify playing unheard on this phone (`myspoti.features` has `player.localMute` only when the user granted `playback.mirror`). It can keep Spotify playing silently and counts listens on the user's Spotify account, so the user ticks the accept-risk box. Host rules, whatever the script does: honoured only while Spotifai's own local / extension player is playing; one extension at a time; at most one enable per 20 s; cleared by itself on track change, local pause or stop, the local track's duration, and when the extension is disabled, uninstalled, blocked or crashes. Refused while Spotifai's own Connect mirror (Settings, "Count extension plays on Spotify", on by default) plays the song on the page itself, and an extension's mirror ends when that one starts. Both players show "Spotify mirrored by <extension>", and the Activity log and Logbook record each enable and clear. Existing installs do not have it until the user accepts the action through the update / consent flow. |
 | `setSpeed(speed: number)` | — | write |  |
 
 `media(trackUri)` (also `myspoti.spotify.media(trackUri)`) returns the media manifest Spotify sent the
@@ -1442,7 +1442,7 @@ sha256; nothing about the user).
 ### 9.3 Publish in 5 minutes
 
 Nobody approves an extension: you publish it in your own GitHub repository, and the store finds it
-by its topic. Myspoti does not host, review or endorse third-party extensions; read the
+by its topic. Spotifai does not host, review or endorse third-party extensions; read the
 [policy](https://github.com/kota-zo/myspoti-extensions/blob/main/POLICY.md) (no DRM circumvention,
 piracy, credential theft, fake plays, malware) before you publish.
 
@@ -1492,9 +1492,9 @@ A write the user allows for good is a grant on method + host + path pattern. On 
 ## 10. Prove a request comes from a genuine install (`attest`)
 
 Optional and generic: any extension that talks to **its author's own server** can use it, so that
-the server can tell a request comes from a Myspoti install running that extension, and not from a
+the server can tell a request comes from a Spotifai install running that extension, and not from a
 script that pulled a key out of the zip (there is nothing secret in a zip: anyone can read it).
-Action `attest` (normal, "Prove this is Myspoti"): the user sees it at install like the others.
+Action `attest` (normal, "Prove this is Spotifai"): the user sees it at install like the others.
 Without it, every `myspoti.attest` call throws `"attest is not in this extension's manifest
 (actions)"`. No key exists until the extension calls `enroll`. The app makes no request of its own
 for this: your script sends what it gets to your server.
@@ -1529,7 +1529,7 @@ determined owner of a phone.
 
 ### It is optional
 
-For the author: your server can still serve clients that did not enrol, or serve them less; Myspoti
+For the author: your server can still serve clients that did not enrol, or serve them less; Spotifai
 never requires it. For the user: it is one more line in the install prompt, the extension works
 without it for everything else, nothing is sent anywhere by the app, and the key is theirs to lose
 by uninstalling.
@@ -1585,7 +1585,7 @@ function signedPost(path, body) {
 }
 ```
 
-(manifest: `"actions": [{ "name": "attest", "why": "Lets my server know this is a real Myspoti" }, { "name": "network", "hosts": ["api.example.com"], "why": "Talks to my server" }]`.)
+(manifest: `"actions": [{ "name": "attest", "why": "Lets my server know this is a real Spotifai" }, { "name": "network", "hosts": ["api.example.com"], "why": "Talks to my server" }]`.)
 
 On a computer, `myspoti-ext` gives each extension a **software** EC P-256 key kept in
 `~/.myspoti-ext/attest/` (or under `$MYSPOTI_EXT_HOME`), and a one-certificate self-signed

@@ -378,7 +378,7 @@ object ConnectMirror {
             running = true
             firstPlay = true
             // An extension's own mirror (playback.mirror) gives way: two would fight over the page.
-            com.music.spotui.extensions.Extensions.mirrorReset("Myspoti plays the song on Spotify itself")
+            com.music.spotui.extensions.Extensions.mirrorReset("Spotifai plays the song on Spotify itself")
             // The page asks Android for the audio focus as it plays: the local player must not yield it.
             LocalPlayer.setMirrorFocus(true)
             startDriftCheck()

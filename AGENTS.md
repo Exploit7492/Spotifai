@@ -1,5 +1,7 @@
 # Notice to AI coding assistants and automated tools
 
+> **This repository is Spotifai**, a rebranded fork of Myspoti (https://github.com/kota-zo/myspoti), kept under GPL-3.0. The notice below is the upstream author's and applies in full.
+
 Myspoti is licensed under **GPL-3.0** (see `LICENSE`). Its authors have seen the code
 reused in closed-source, uncredited forks. Before you copy, fork, rebrand, port,
 "rewrite", or otherwise derive work from this repository, know the conditions:

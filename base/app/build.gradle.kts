@@ -19,7 +19,7 @@ android {
     compileSdk = 37
 
     // Two channels that install side by side: betas ("2.0.0-beta.3") stay "app.myspoti",
-    // signed with the first key, as "Myspoti Beta"; releases are "app.myspoti.stable",
+    // signed with the first key, as "Spotifai Beta"; releases are "app.myspoti.stable",
     // signed with their own key, as "Myspoti".
     // Local builds (no version given) are on the beta side, like the phone test builds.
     val version = (findProperty("appVersionName") as String?) ?: "2.3.0"
@@ -27,7 +27,7 @@ android {
     val beta = findProperty("appVersionName") == null || version.contains("-beta")
     defaultConfig {
         applicationId = if (beta) "app.myspoti" else "app.myspoti.stable"
-        manifestPlaceholders["appLabel"] = if (beta) "Myspoti Beta" else "Myspoti"
+        manifestPlaceholders["appLabel"] = if (beta) "Spotifai Beta" else "Spotifai"
         // The adb command line (com.music.spotui.cli): betas and debug builds only.
         manifestPlaceholders["cliEnabled"] = beta.toString()
         minSdk = 29
@@ -79,7 +79,7 @@ android {
         debug {
             // Installs next to the release apps (own data, own sign-in).
             applicationIdSuffix = ".dev"
-            manifestPlaceholders["appLabel"] = "Myspoti dev"
+            manifestPlaceholders["appLabel"] = "Spotifai dev"
             manifestPlaceholders["cliEnabled"] = "true"
         }
         release {
@@ -90,7 +90,7 @@ android {
             // beta on the test phone without replacing the signed beta installed there.
             if (findProperty("overDev") != null) {
                 applicationIdSuffix = ".dev"
-                manifestPlaceholders["appLabel"] = "Myspoti dev"
+                manifestPlaceholders["appLabel"] = "Spotifai dev"
             }
             isMinifyEnabled = true
             isShrinkResources = true

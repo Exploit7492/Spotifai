@@ -25,7 +25,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Myspoti"
+rootProject.name = "Spotifai"
 include(":app")
 include(":api")
 include(":extensions")
