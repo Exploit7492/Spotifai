@@ -1,0 +1,20 @@
+Spotifai is an ad-free Spotify client for Android, with lossless downloads and audio extensions, on a free account.
+
+Spotifai is a rebranded fork of Myspoti (https://github.com/kota-zo/myspoti), released under GPL-3.0.
+
+Features:
+
+- Spotify with no ads
+- Lossless downloads, encrypted and kept on your phone
+- Audio and download-source extensions you add yourself
+- Background playback and Spotify Connect
+- Synced lyrics, with translation
+- Local files and your own library
+- Playlist import and export
+- Equalizer, playback speed and skip silence
+- Sleep timer
+- Light, dark and AMOLED themes
+
+Spotifai is a new fork and has no installs or reviews yet — be the first.
+
+This is an independent third-party client. Not affiliated with Spotify AB.
